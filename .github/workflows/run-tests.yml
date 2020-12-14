@@ -1,0 +1,15 @@
+name: XplorersBot PingOne Library tests
+
+on:
+  push:
+
+jobs:
+  run_nose_tests:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Install packages
+      run: make build
+
+    - name: Test python library with nose tests
+      run: make test
