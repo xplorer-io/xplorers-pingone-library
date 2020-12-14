@@ -9,7 +9,7 @@ jobs:
     steps:
 
     - name: Install packages
-      run: make build
+      run: make install
 
     - name: Test python library with nose tests
       run: make test
