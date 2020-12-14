@@ -8,8 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+
+    - uses: dschep/install-pipenv-action@v1
+
     - name: Install packages
-      run: make build
+      run: make install
 
     - name: Test python library with nose tests
       run: make test
