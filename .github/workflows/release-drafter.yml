@@ -2,21 +2,18 @@ name: XplorersBot PingOne Library Releaser
 
 on:
   push:
-    # branches to consider in the event; optional, defaults to all
     branches:
       - master
 
 jobs:
-  update_release_draft:
+  release-on-push:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-
-      - id: Release
-        uses: rymndhng/release-on-push-action@master
+      - uses: rymndhng/release-on-push-action@master
         with:
-          bump_version_scheme: patch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          bump_version_scheme: minor
 
       - name: Check Output Parameters
         run: |
