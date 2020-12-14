@@ -3,7 +3,7 @@ name: XplorersBot PingOne Library Releaser
 on:
   push:
     branches:
-      - master
+      # - master
 
 jobs:
   release-on-push:
